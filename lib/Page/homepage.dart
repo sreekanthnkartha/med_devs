@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:med_devs/Doctor/appodoc.dart';
 import 'package:med_devs/Hospital/hosdata.dart';
 import 'package:med_devs/Hospital/hospital.dart';
+import 'package:med_devs/Maternity/maternity.dart';
 import 'package:med_devs/Prescription/pres.dart';
 import 'package:med_devs/Style/extension.dart';
-import 'package:med_devs/Style/lcolor.dart';
+// import 'package:med_devs/Style/lcolor.dart';
 import 'package:med_devs/Style/textst.dart';
 import 'package:med_devs/Style/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -187,9 +188,9 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.orange,
                                 lightColor: Color(0xfffa9881)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => DocAPPo())),
+                                    builder: (context) => Maternity())),
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => DocAPPo())),
+                                    builder: (context) => Maternity())),
                           ),
                           GestureDetector(
                             child: _categoryCard("Prescription", "",
