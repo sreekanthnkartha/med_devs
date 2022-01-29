@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:med_devs/Doctor/appodoc.dart';
 import 'package:med_devs/Hospital/hosdata.dart';
 import 'package:med_devs/Hospital/hospital.dart';
+import 'package:med_devs/Maternity/Others/news.dart';
 import 'package:med_devs/Maternity/tools/counter.dart';
 import 'package:med_devs/Style/extension.dart';
 import 'package:med_devs/Style/textst.dart';
@@ -96,7 +97,7 @@ class _HomePageState extends State<Mat> {
                               ),
                               GestureDetector(
                                 child: _categoryCard("", "",
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1vYq5hVWmM-oOUPrrZFo9QbaEKyhn01ZZfXxhin_77HDR6URtD6lbb4iRxJWshgTLYY&usqp=CAU",
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdMWP_4HTVn08qluOgIkmmddTSve-qBw1kIg&usqp=CAU",
                                     color: Colors.orange,
                                     lightColor: Colors.orange),
                                 onDoubleTap: () => Navigator.of(context).push(
@@ -141,17 +142,12 @@ class _HomePageState extends State<Mat> {
                                 "https://images.indianexpress.com/2021/01/ivf-baby-fb.jpg",
                                 color: Colors.green,
                                 lightColor: Colors.lightGreen),
-                                onLongPress: ()
-                                {
-                                  print("ewed");
-                                  _launchURL();
-                                },
-                            onDoubleTap: () {
-                              setState(() {
-                                print("fdff");
-                                _launchURL();
-                              });
-                            },
+                                onDoubleTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => News())),
+                                onLongPress: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => News())),
                           ),
                           GestureDetector(
                             child: _categoryCard("Timeline", "",
