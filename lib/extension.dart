@@ -6,7 +6,7 @@ import 'lcolor.dart';
 extension TextStyleHelpers on TextStyle {
   TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
   TextStyle get white => copyWith(color: Colors.white);
-  TextStyle get subTitleColor => copyWith(color: LightColor.subTitleTextColor);
+  TextStyle get subTitleColor => copyWith(color: Colors.grey[500]);
 }
 
 extension PaddingHelper on Widget {

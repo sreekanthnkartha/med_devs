@@ -51,26 +51,26 @@ class DoctorModel {
     String toRawJson() => json.encode(toJson());
 
     factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
-        name: json["name"] == null ? null : json["name"],
-        type: json["type"] == null ? null : json["type"],
-        description: json["description"] == null ? null : json["description"],
+        name: json["name"],
+        type: json["type"],
+        description: json["description"],
         rating: json["rating"] == null ? null : json["rating"].toDouble(),
         goodReviews: json["goodReviews"] == null ? null : json["goodReviews"].toDouble(),
         totalScore: json["totalScore"] == null ? null : json["totalScore"].toDouble(),
         satisfaction: json["satisfaction"] == null ? null : json["satisfaction"].toDouble(),
-        isfavourite: json["isfavourite"] == null ? null : json["isfavourite"],
-        image: json["image"] == null ? null : json["image"],
+        isfavourite: json["isfavourite"],
+        image: json["image"],
     );
 
     Map<String, dynamic> toJson() => {
-        "name": name == null ? null : name,
-        "type": type == null ? null : type,
-        "description": description == null ? null : description,
-        "rating": rating == null ? null : rating,
-        "goodReviews": goodReviews == null ? null : goodReviews,
-        "totalScore": totalScore == null ? null : totalScore,
-        "satisfaction": satisfaction == null ? null : satisfaction,
-        "isfavourite": isfavourite == null ? null : isfavourite,
-        "image": image == null ? null : image,
+        "name": name,
+        "type": type,
+        "description": description,
+        "rating": rating,
+        "goodReviews": goodReviews,
+        "totalScore": totalScore,
+        "satisfaction": satisfaction,
+        "isfavourite": isfavourite,
+        "image": image,
     };
 }
