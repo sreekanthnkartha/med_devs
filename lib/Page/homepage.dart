@@ -1,16 +1,13 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:med_devs/appodoc.dart';
-import 'package:med_devs/hospital.dart';
-import 'doctorpage.dart';
-import 'hosdata.dart';
-import 'lcolor.dart';
-import 'textst.dart';
-import 'theme.dart';
-import 'extension.dart';
-import 'data.dart';
+import 'package:med_devs/Doctor/appodoc.dart';
+import 'package:med_devs/Hospital/hosdata.dart';
+import 'package:med_devs/Hospital/hospital.dart';
+import 'package:med_devs/Style/extension.dart';
+import 'package:med_devs/Style/lcolor.dart';
+import 'package:med_devs/Style/textst.dart';
+import 'package:med_devs/Style/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'docmodel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -88,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     Text("Hello,",
                         style:
                             TextStyle(color: Colors.grey[700], fontSize: 18)),
-                    const Text("Peter Parker",
+                    const Text("Rajinikanth",
                         // style: TextStyles.h1Style
                         style: TextStyle(
                             color: Colors.black,
@@ -172,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                             },
                           ),
                           GestureDetector(
-                            child: _categoryCard("Covid - 19 Specialist", "899 Doctors",
+                            child: _categoryCard("Top Doctors", "899 Doctors",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
                                 color: LightColor.skyBlue,
                                 lightColor: LightColor.lightBlue),
@@ -181,20 +178,28 @@ class _HomePageState extends State<HomePage> {
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => DocAPPo())),
                           ),
-                          _categoryCard(
-                              "Cardiologists Specialist",
-                              "500 + Doctors",
-                              "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                              color: LightColor.orange,
-                              lightColor: LightColor.lightOrange),
-                          _categoryCard("Dermatologist", "300 + Doctors",
-                              "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                              color: LightColor.green,
-                              lightColor: LightColor.lightGreen),
-                          _categoryCard("General Surgeon", "500 + Doctors",
-                              "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                              color: LightColor.skyBlue,
-                              lightColor: LightColor.lightBlue)
+                          GestureDetector(
+                            child: _categoryCard(
+                                "Maternity Specialist",
+                                "50 + Doctors",
+                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                color: LightColor.orange,
+                                lightColor: LightColor.lightOrange),
+                                onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DocAPPo())),
+                                    onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DocAPPo())),
+                          ),
+                          GestureDetector(
+                            child: _categoryCard("Prescription", "",
+                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                color: LightColor.green,
+                                lightColor: LightColor.lightGreen),
+                                onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DocAPPo())),
+                                    onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DocAPPo())),
+                          ),
                         ],
                       ),
                     ),
@@ -251,7 +256,7 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
           // color: color,
           image: DecorationImage(
-            colorFilter: new ColorFilter.mode(
+            colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.8), BlendMode.dstATop),
             image: NetworkImage(link),
             fit: BoxFit.cover,

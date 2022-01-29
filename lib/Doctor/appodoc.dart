@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:med_devs/extension.dart';
-import 'package:med_devs/textst.dart';
+import 'package:med_devs/Style/extension.dart';
+import 'package:med_devs/Style/lcolor.dart';
+import 'package:med_devs/Style/textst.dart';
 import 'doctorpage.dart';
-import 'lcolor.dart';
-import 'textst.dart';
-import 'extension.dart';
 import 'data.dart';
 import 'docmodel.dart';
 class DocAPPo extends StatefulWidget {

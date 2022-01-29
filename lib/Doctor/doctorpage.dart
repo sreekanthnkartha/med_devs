@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:med_devs/extension.dart';
+import 'package:med_devs/Style/extension.dart';
+import 'package:med_devs/Style/lcolor.dart';
+import 'package:med_devs/Style/textst.dart';
+import 'package:med_devs/Style/theme.dart';
 import 'docmodel.dart';
-import 'lcolor.dart';
-import 'progress.dart';
-import 'textst.dart';
-import 'theme.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class DetailPage extends StatefulWidget {

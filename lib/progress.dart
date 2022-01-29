@@ -1,8 +1,9 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'lcolor.dart';
-import 'theme.dart';
+
+import 'Style/lcolor.dart';
+import 'Style/theme.dart';
 
 class ProgressWidget extends StatefulWidget {
   ProgressWidget(

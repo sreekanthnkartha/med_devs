@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:med_devs/homepage.dart';
+import 'package:med_devs/Style/styles.dart';
+import 'homepage.dart';
 import 'registration.dart';
-import 'styles.dart';
 
 //If you use getx state management, stateless widgets are enough.
 class LoginPage extends StatefulWidget {
@@ -35,12 +35,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Image(
                     fit: BoxFit.cover,
-                    height: 350,
+                    height: 325,
                     image: NetworkImage(
-                        'https://wallpaperboat.com/wp-content/uploads/2020/11/23/61328/steam-train-02.jpg'),
+                        'https://economictimes.indiatimes.com/thumb/msid-75771189,width-1200,height-900,resizemode-4,imgsize-693576/223-health-insurance.jpg'),
                   ),
                   // CachedNetworkImage(
-
                   //   fit: BoxFit.cover,
                   //   imageUrl: "https://wallpaperboat.com/wp-content/uploads/2020/11/23/61328/steam-train-02.jpg"
                   // ),

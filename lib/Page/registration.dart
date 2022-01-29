@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'styles.dart';
+import 'package:med_devs/Style/styles.dart';
 
 class RegPage extends StatefulWidget {
   @override
