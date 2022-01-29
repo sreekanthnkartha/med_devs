@@ -213,7 +213,31 @@ class _DetailPageState extends State<DetailPage> {
                               color: Theme.of(context).primaryColor,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                        elevation: 3,
+                                        title: Text(
+                                          "APPOINTMENT SUCCESSFUL",
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        content: Icon(
+                                          Icons.check_circle_outline_rounded,
+                                          size: 80,
+                                          color: Colors.green,
+                                        ),
+                                        // actions: <Widget>[
+                                        //   FlatButton(
+                                        //     onPressed: () {
+                                        //       Navigator.of(ctx).pop();
+                                        //     },
+                                        //     child: Text("okay"),
+                                        //   ),
+                                        // ],
+                                      ),
+                                    );
+                              },
                               child: Text(
                                 "Make an appointment",
                                 style: TextStyles.titleNormal.white,

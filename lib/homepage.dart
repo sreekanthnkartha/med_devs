@@ -154,8 +154,8 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           GestureDetector(
                             child: _categoryCard(
-                                "Chemist & Drugist",
-                                "350 + Stores",
+                                "Medicine Shop",
+                                "3 days left ...",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
                                 color: LightColor.green,
                                 lightColor: LightColor.lightGreen),
