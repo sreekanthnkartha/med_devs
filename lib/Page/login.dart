@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Image(
                     fit: BoxFit.cover,
-                    height: 325,
+                    height: 300,
                     image: NetworkImage(
                         'https://economictimes.indiatimes.com/thumb/msid-75771189,width-1200,height-900,resizemode-4,imgsize-693576/223-health-insurance.jpg'),
                   ),
@@ -46,26 +46,33 @@ class _LoginPageState extends State<LoginPage> {
                   // ),
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.only(top: 300),
+                    margin: EdgeInsets.only(top: 270),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(23),
+                      padding: EdgeInsets.fromLTRB(16,0,16,8),
                       child: ListView(
                         shrinkWrap:
                             true, //you must add this if you place listview inside scrollview
                         physics:
                             NeverScrollableScrollPhysics(), //to prevent default scrolling of listview
                         children: <Widget>[
+                          Hero(
+                              tag: "hi",
+                              child: Image(
+                                height: 150,
+                                image: AssetImage("images/log.png"),
+                              )),
+                              SizedBox(height: 20,),
                           TextField(
                               style: inputstyle(),
                               // controller: uc.uname,
                               decoration:
                                   inputdec("Username", Icons.person_outline)),
                           SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           TextField(
                             obscureText: _obscuretext,
@@ -179,5 +186,4 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ));
   }
- 
 }

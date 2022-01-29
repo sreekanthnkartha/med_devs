@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(seconds: 4), () {
       Navigator.pop(context);
       Navigator.push(
           context,
@@ -44,15 +44,26 @@ class _MyAppState extends State<MyApp> {
       child: ListView(
         children: [
           SizedBox(
-            height: 470,
+            height: 10,
           ),
-          // Image(image: AssetImage("images/logo2.png"),),
+      //     Container(
+      //       decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //     // colorFilter: new ColorFilter.mode(
+      //     //     Colors.black.withOpacity(1), BlendMode.dstATop),
+      //     image: AssetImage("images/log.png"),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
+          // ),
+          Hero(tag:"hi",
+          child: Image(image: AssetImage("images/log.png"),)),
           // Text("League El"),
           SizedBox(
-            height: 20,
+            height: 140,
           ),
           SpinKitThreeInOut(
-            color: Colors.white,
+            color: Colors.black,
             size: 60.0,
           )
         ],
