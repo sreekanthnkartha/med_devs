@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:med_devs/homepage.dart';
 // import 'package:reservationapp/booktickets.dart';
 import 'registration.dart';
 import 'styles.dart';
@@ -121,8 +122,8 @@ class _LoginPageState extends State<LoginPage> {
                             padding: EdgeInsets.only(top: 20),
                             child: MaterialButton(
                               onPressed: () {
-                                // Navigator.of(context).push(MaterialPageRoute(
-                                //     builder: (context) => BOOK_TICKETS()));
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => HomePage()));
                               }, //since this is only a UI app
                               child: Text(
                                 'SIGN IN',
