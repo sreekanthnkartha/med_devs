@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'doctorpage.dart';
 import 'lcolor.dart';
 import 'textst.dart';
 import 'theme.dart';
@@ -346,6 +347,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ).ripple(() {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailPage(model: model,)));
         // Navigator.pushNamed(context, "/DetailPage", arguments: model);
       }, borderRadius: const BorderRadius.all(Radius.circular(20))),
     );
