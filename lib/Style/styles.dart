@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-inputdec(var title, var icn) => new InputDecoration(
+inputdec(var title, var icn) => InputDecoration(
     fillColor: Colors.white,
     filled: true,
-    border: new OutlineInputBorder(
+    border: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         borderSide: BorderSide(color: Colors.black)),
     focusedBorder: OutlineInputBorder(

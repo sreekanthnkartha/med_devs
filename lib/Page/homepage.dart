@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:med_devs/Doctor/appodoc.dart';
 import 'package:med_devs/Hospital/hosdata.dart';
 import 'package:med_devs/Hospital/hospital.dart';
+import 'package:med_devs/Prescription/pres.dart';
 import 'package:med_devs/Style/extension.dart';
 import 'package:med_devs/Style/lcolor.dart';
 import 'package:med_devs/Style/textst.dart';
@@ -28,16 +29,16 @@ class _HomePageState extends State<HomePage> {
     var random = Random();
     final colorList = [
       Theme.of(context).primaryColor,
-      LightColor.orange,
-      LightColor.green,
-      LightColor.grey,
-      LightColor.lightOrange,
-      LightColor.skyBlue,
-      LightColor.titleTextColor,
+      Colors.orange,
+      Colors.green,
+      Colors.grey,
+      const Color(0xfffa9881),
+      Color(0xff71b4fb),
+      Color(0xff1b1718),
       Colors.red,
       Colors.brown,
-      LightColor.purpleExtraLight,
-      LightColor.skyBlue,
+      Color(0xffb1a5f6),
+      Color(0xff71b4fb),
     ];
     var color = colorList[random.nextInt(colorList.length)];
     return color;
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage> {
           const Icon(
             Icons.notifications_none,
             size: 30,
-            color: LightColor.black,
+            color: Colors.black,
           ),
           ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(13)),
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: const BorderRadius.all(Radius.circular(13)),
                     boxShadow: <BoxShadow>[
                       BoxShadow(
-                        color: LightColor.grey.withOpacity(.3),
+                        color: Colors.grey.withOpacity(.3),
                         blurRadius: 15,
                         offset: const Offset(5, 5),
                       )
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                       suffixIcon: SizedBox(
                           width: 50,
                           child:
-                              const Icon(Icons.search, color: LightColor.purple)
+                              const Icon(Icons.search, color: Colors.purple)
                                   .alignCenter
                                   .ripple(() {},
                                       borderRadius: BorderRadius.circular(13))),
@@ -154,8 +155,8 @@ class _HomePageState extends State<HomePage> {
                                 "Medicine Shop",
                                 "3 days left ...",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                                color: LightColor.green,
-                                lightColor: LightColor.lightGreen),
+                                color: Colors.green,
+                                lightColor: Colors.lightGreen),
                                 onLongPress: ()
                                 {
                                   print("ewed");
@@ -171,8 +172,8 @@ class _HomePageState extends State<HomePage> {
                           GestureDetector(
                             child: _categoryCard("Top Doctors", "899 Doctors",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                                color: LightColor.skyBlue,
-                                lightColor: LightColor.lightBlue),
+                                color: Color(0xff71b4fb),
+                                lightColor: Colors.lightBlue),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => DocAPPo())),
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
@@ -183,8 +184,8 @@ class _HomePageState extends State<HomePage> {
                                 "Maternity Specialist",
                                 "50 + Doctors",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                                color: LightColor.orange,
-                                lightColor: LightColor.lightOrange),
+                                color: Colors.orange,
+                                lightColor: Color(0xfffa9881)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => DocAPPo())),
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
@@ -193,12 +194,12 @@ class _HomePageState extends State<HomePage> {
                           GestureDetector(
                             child: _categoryCard("Prescription", "",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                                color: LightColor.green,
-                                lightColor: LightColor.lightGreen),
+                                color: Colors.green,
+                                lightColor: Color(0xff5ed6c3)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => DocAPPo())),
+                                    builder: (context) => Pres())),
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => DocAPPo())),
+                                    builder: (context) => Pres())),
                           ),
                         ],
                       ),
@@ -316,12 +317,12 @@ class _HomePageState extends State<HomePage> {
           BoxShadow(
             offset: const Offset(4, 4),
             blurRadius: 10,
-            color: LightColor.grey.withOpacity(.2),
+            color: Colors.grey.withOpacity(.2),
           ),
           BoxShadow(
             offset: const Offset(-3, 0),
             blurRadius: 15,
-            color: LightColor.grey.withOpacity(.1),
+            color: Colors.grey.withOpacity(.1),
           )
         ],
       ),

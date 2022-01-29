@@ -29,12 +29,12 @@ class _DocAPPoState extends State<DocAPPo> {
           BoxShadow(
             offset: const Offset(4, 4),
             blurRadius: 10,
-            color: LightColor.grey.withOpacity(.2),
+            color: Colors.grey.withOpacity(.2),
           ),
           BoxShadow(
             offset: const Offset(-3, 0),
             blurRadius: 15,
-            color: LightColor.grey.withOpacity(.1),
+            color: Colors.grey..withOpacity(.1),
           )
         ],
       ),
@@ -94,7 +94,7 @@ class _DocAPPoState extends State<DocAPPo> {
           const Icon(
             Icons.notifications_none,
             size: 30,
-            color: LightColor.black,
+            color: Colors.black,
           ),
           ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(13)),

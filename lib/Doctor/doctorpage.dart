@@ -29,7 +29,7 @@ class _DetailPageState extends State<DetailPage> {
       titleStyle = TextStyles.title.copyWith(fontSize: 23).bold;
     }
     return Scaffold(
-      backgroundColor: LightColor.extraLightBlue,
+      backgroundColor: Color(0xffd9eeff),
       body: SafeArea(
         bottom: false,
         child: Stack(
@@ -86,7 +86,7 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                         Divider(
                           thickness: .3,
-                          color: LightColor.grey,
+                          color: Colors.grey,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -164,7 +164,7 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                         Divider(
                           thickness: .3,
-                          color: LightColor.grey,
+                          color: Colors.grey,
                         ),
                         Text("About", style: titleStyle).vP16,
                         Text(
@@ -179,7 +179,7 @@ class _DetailPageState extends State<DetailPage> {
                               width: 45,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: LightColor.grey.withAlpha(150)),
+                                  color:  Colors.grey.withAlpha(150)),
                               child: Icon(
                                 Icons.call,
                                 color: Colors.white,
@@ -196,7 +196,7 @@ class _DetailPageState extends State<DetailPage> {
                               width: 45,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: LightColor.grey.withAlpha(150)),
+                                  color: Colors.grey.withAlpha(150)),
                               child: Icon(
                                 Icons.chat_bubble,
                                 color: Colors.white,

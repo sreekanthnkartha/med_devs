@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'lcolor.dart';
 
 class AppTheme {
   const AppTheme();
   static ThemeData lightTheme = ThemeData.light().copyWith(
-    backgroundColor: LightColor.background,
-    primaryColor: LightColor.purple,
-    cardTheme: CardTheme(color: LightColor.background),
-    iconTheme: IconThemeData(color: LightColor.iconColor),
-    bottomAppBarColor: LightColor.background,
-    dividerColor: LightColor.grey,
+    backgroundColor: Color(0XFFfefefe),
+    primaryColor: Colors.purple,
+    cardTheme: CardTheme(color: Color(0XFFfefefe)),
+    iconTheme: IconThemeData(color: Color(0xffcbd0db)),
+    bottomAppBarColor: Color(0XFFfefefe),
+    dividerColor: Colors.grey,
   );
 
   static TextStyle titleStyle =
-      const TextStyle(color: LightColor.titleTextColor, fontSize: 16);
+      const TextStyle(color: Color(0xff1b1718), fontSize: 16);
   static TextStyle subTitleStyle =
-      const TextStyle(color: LightColor.subTitleTextColor, fontSize: 12);
+      const TextStyle(color: Color(0xffb9bfcd), fontSize: 12);
 
   static TextStyle h1Style =
       const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);

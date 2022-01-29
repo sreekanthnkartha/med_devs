@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:med_devs/Prescription/pres.dart';
 import 'package:med_devs/Style/styles.dart';
 import 'homepage.dart';
 import 'registration.dart';
@@ -119,7 +120,10 @@ class _LoginPageState extends State<LoginPage> {
                           Padding(
                             padding: EdgeInsets.only(top: 20),
                             child: MaterialButton(
-                              // onPressed: 
+                              // onPressed: () {
+                              //   Navigator.of(context).push(MaterialPageRoute(
+                              //       builder: (context) => HomePage()));
+                              // },
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => HomePage()));
