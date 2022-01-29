@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             child: _categoryCard("Prescription", "",
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*",
+                                "https://media.istockphoto.com/photos/doctor-filling-out-a-prescription-picture-id1190193669?k=20&m=1190193669&s=612x612&w=0&h=hRT7a6DCTMc7IDfC_QKaPuUOnBT2iUA95GJCEQrRdz4=",
                                 color: Colors.green,
                                 lightColor: Color(0xff5ed6c3)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
