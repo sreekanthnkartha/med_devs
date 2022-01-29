@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:med_devs/Doctor/appodoc.dart';
 import 'package:med_devs/Hospital/hosdata.dart';
 import 'package:med_devs/Hospital/hospital.dart';
-import 'package:med_devs/Maternity/maternity.dart';
 import 'package:med_devs/Maternity/tools/counter.dart';
-import 'package:med_devs/Prescription/pres.dart';
 import 'package:med_devs/Style/extension.dart';
 import 'package:med_devs/Style/textst.dart';
 import 'package:med_devs/Style/theme.dart';
@@ -82,7 +80,7 @@ class _HomePageState extends State<Mat> {
                               ),
                               GestureDetector(
                                 child: _categoryCard("", "",
-                                    "https://thumbs.dreamstime.com/b/bmi-body-mass-index-calculator-icon-illustration-vector-bmi-body-mass-index-calculator-icon-illustration-157560815.jpg",
+                                    "https://health.clevelandclinic.org/wp-content/uploads/sites/3/2019/09/gainLoseWeight-1137100432-770x553.jpg",
                                     color: Colors.green,
                                     lightColor: Colors.greenAccent),
                                 onLongPress: () {
@@ -108,12 +106,6 @@ class _HomePageState extends State<Mat> {
                                     MaterialPageRoute(
                                         builder: (context) => DocAPPo())),
                               ),
-                              GestureDetector(
-                                child: _categoryCard("", "",
-                                    "https://cdn-icons-png.flaticon.com/512/3158/3158990.png",
-                                    color: Colors.blue,
-                                    lightColor: Colors.lightBlueAccent),
-                              ),
                             ],
                           ),
                     ),
@@ -127,7 +119,7 @@ class _HomePageState extends State<Mat> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text("Category", style: TextStyles.title.bold),
+                          Text("Others", style: TextStyles.title.bold),
                           Text(
                             "See All",
                             style: TextStyles.titleNormal.copyWith(
@@ -144,9 +136,9 @@ class _HomePageState extends State<Mat> {
                         children: <Widget>[
                           GestureDetector(
                             child: _categoryCard(
-                                "Baby Kicker",
+                                "For You",
                                 "",
-                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                "https://images.indianexpress.com/2021/01/ivf-baby-fb.jpg",
                                 color: Colors.green,
                                 lightColor: Colors.lightGreen),
                                 onLongPress: ()
@@ -162,36 +154,14 @@ class _HomePageState extends State<Mat> {
                             },
                           ),
                           GestureDetector(
-                            child: _categoryCard("", "",
-                                "https://media.istockphoto.com/photos/doctor-work-space-concept-picture-id825461262?k=20&m=825461262&s=612x612&w=0&h=SZ7fXYYTUKi3QbcOGfVWd9pwaBcvQt7lcRfkrpX40IU=",
+                            child: _categoryCard("Timeline", "",
+                                "https://static8.depositphotos.com/1472772/979/i/950/depositphotos_9790830-stock-photo-hourglass-sandglass-sand-timer-sand.jpg",
                                 color: Color(0xff71b4fb),
                                 lightColor: Colors.lightBlue),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => DocAPPo())),
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => DocAPPo())),
-                          ),
-                          GestureDetector(
-                            child: _categoryCard(
-                                " ",
-                                "",
-                                "https://cdn.dribbble.com/users/1630878/screenshots/6195908/comfort_maternity_2_4x.jpg",
-                                color: Colors.orange,
-                                lightColor: Color(0xfffa9881)),
-                                onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Maternity())),
-                                    onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Maternity())),
-                          ),
-                          GestureDetector(
-                            child: _categoryCard("", "",
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*",
-                                color: Colors.green,
-                                lightColor: Color(0xff5ed6c3)),
-                                onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Pres())),
-                                    onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Pres())),
                           ),
                         ],
                       ),
