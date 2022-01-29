@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                                   print("ewed");
                                   _launchURL();
                                 },
-                            onTap: () {
+                            onDoubleTap: () {
                               setState(() {
                                 print("fdff");
                                 _launchURL();
