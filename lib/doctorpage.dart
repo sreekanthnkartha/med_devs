@@ -3,7 +3,6 @@ import 'package:med_devs/extension.dart';
 import 'docmodel.dart';
 import 'lcolor.dart';
 import 'progress.dart';
-import 'rating.dart';
 import 'textst.dart';
 import 'theme.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -75,10 +74,10 @@ class _DetailPageState extends State<DetailPage> {
                               Icon(Icons.check_circle,
                                   size: 18,
                                   color: Theme.of(context).primaryColor),
-                              Spacer(),
-                              RatingStar(
-                                rating: model.rating,
-                              )
+                              // Spacer(),
+                              // RatingStar(
+                              //   rating: model.rating,
+                              // )
                             ],
                           ),
                           subtitle: Text(
@@ -100,8 +99,8 @@ class _DetailPageState extends State<DetailPage> {
                                   child: CircularPercentIndicator(
                                     radius: 40.0,
                                     lineWidth: 5.0,
-                                    percent: 1.0,
-                                    center: new Text("100%"),
+                                    percent: 0.9,
+                                    center: new Text("90%"),
                                     progressColor: Colors.blueGrey,
                                   ),
                                 ),
@@ -115,8 +114,8 @@ class _DetailPageState extends State<DetailPage> {
                                   child: CircularPercentIndicator(
                                     radius: 40.0,
                                     lineWidth: 5.0,
-                                    percent: 1.0,
-                                    center: new Text("100%"),
+                                    percent: 0.7,
+                                    center: new Text("70%"),
                                     progressColor: Colors.blueGrey,
                                   ),
                                 ),

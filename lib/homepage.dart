@@ -1,6 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:med_devs/appodoc.dart';
+import 'package:med_devs/hospital.dart';
 import 'doctorpage.dart';
+import 'hosdata.dart';
 import 'lcolor.dart';
 import 'textst.dart';
 import 'theme.dart';
@@ -17,10 +20,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late List<DoctorModel> doctorDataList;
+  late List<HosModel> doctorDataList;
   @override
   void initState() {
-    doctorDataList = doctorMapList.map((x) => DoctorModel.fromJson(x)).toList();
+    doctorDataList = hosMapList.map((x) => HosModel.fromJson(x)).toList();
     super.initState();
   }
 
@@ -168,10 +171,16 @@ class _HomePageState extends State<HomePage> {
                               });
                             },
                           ),
-                          _categoryCard("Covid - 19 Specialist", "899 Doctors",
-                              "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                              color: LightColor.skyBlue,
-                              lightColor: LightColor.lightBlue),
+                          GestureDetector(
+                            child: _categoryCard("Covid - 19 Specialist", "899 Doctors",
+                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                color: LightColor.skyBlue,
+                                lightColor: LightColor.lightBlue),
+                                onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DocAPPo())),
+                                    onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DocAPPo())),
+                          ),
                           _categoryCard(
                               "Cardiologists Specialist",
                               "500 + Doctors",
@@ -200,7 +209,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Top Doctors", style: TextStyles.title.bold),
+                    Text("Health Centers Near you", style: TextStyles.title.bold),
                     IconButton(
                             icon: Icon(
                               Icons.sort,
@@ -292,7 +301,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _doctorTile(DoctorModel model) {
+  Widget _doctorTile(HosModel model) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       decoration: BoxDecoration(
@@ -328,7 +337,7 @@ class _HomePageState extends State<HomePage> {
                 model.image,
                 height: 50,
                 width: 50,
-                fit: BoxFit.contain,
+                fit: BoxFit.fitHeight,
               ),
               // child: const Image(
               //   image: NetworkImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhandsome-doctor&psig=AOvVaw1hdk-_Q7L9gWnUUhmxm3tX&ust=1643535480955000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNjPt_bU1vUCFQAAAAAdAAAAABAD"),
@@ -347,8 +356,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ).ripple(() {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailPage(model: model,)));
-        // Navigator.pushNamed(context, "/DetailPage", arguments: model);
+        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailPage(model: model,)));
+        // // Navigator.pushNamed(context, "/DetailPage", arguments: model);
       }, borderRadius: const BorderRadius.all(Radius.circular(20))),
     );
   }
