@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             child: _categoryCard("Top Doctors", "899 Doctors",
-                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                "https://media.istockphoto.com/photos/doctor-work-space-concept-picture-id825461262?k=20&m=825461262&s=612x612&w=0&h=SZ7fXYYTUKi3QbcOGfVWd9pwaBcvQt7lcRfkrpX40IU=",
                                 color: Color(0xff71b4fb),
                                 lightColor: Colors.lightBlue),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -182,9 +182,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             child: _categoryCard(
+                                " ",
                                 "Maternity Specialist",
-                                "50 + Doctors",
-                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                "https://cdn.dribbble.com/users/1630878/screenshots/6195908/comfort_maternity_2_4x.jpg",
                                 color: Colors.orange,
                                 lightColor: Color(0xfffa9881)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             child: _categoryCard("Prescription", "",
-                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*",
                                 color: Colors.green,
                                 lightColor: Color(0xff5ed6c3)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -259,7 +259,7 @@ class _HomePageState extends State<HomePage> {
           // color: color,
           image: DecorationImage(
             colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.8), BlendMode.dstATop),
+                Colors.black.withOpacity(0.8), BlendMode.dstIn),
             image: NetworkImage(link),
             fit: BoxFit.cover,
           ),
@@ -289,7 +289,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     Flexible(
-                      child: Text(title, style: titleStyle).hP8,
+                      child: Text(title,style: (title=="Priscription" )?titleStyle:TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white,)).hP8,
                     ),
                     SizedBox(height: 10),
                     Flexible(
