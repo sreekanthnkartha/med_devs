@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:med_devs/homepage.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'registration.dart';
 import 'styles.dart';
 
@@ -121,11 +120,11 @@ class _LoginPageState extends State<LoginPage> {
                           Padding(
                             padding: EdgeInsets.only(top: 20),
                             child: MaterialButton(
-                              onPressed: _launchURL,
-                              // onPressed: () {
-                              //   Navigator.of(context).push(MaterialPageRoute(
-                              //       builder: (context) => HomePage()));
-                              // }, //since this is only a UI app
+                              // onPressed: 
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => HomePage()));
+                              }, //since this is only a UI app
                               child: Text(
                                 'SIGN IN',
                                 style: TextStyle(
@@ -177,16 +176,5 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ));
   }
-  _launchURL() async {
-  const url = 'https://flutter.io';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: true,
-      enableJavaScript: true
-    );
-  } else {
-    throw 'Could not launch $url';
-  }
-}
+ 
 }

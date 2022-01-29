@@ -5,6 +5,7 @@ import 'textst.dart';
 import 'theme.dart';
 import 'extension.dart';
 import 'data.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'docmodel.dart';
 
 class HomePage extends StatefulWidget {
@@ -147,10 +148,25 @@ class _HomePageState extends State<HomePage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          _categoryCard("Chemist & Drugist", "350 + Stores",
-                              "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
-                              color: LightColor.green,
-                              lightColor: LightColor.lightGreen),
+                          GestureDetector(
+                            child: _categoryCard(
+                                "Chemist & Drugist",
+                                "350 + Stores",
+                                "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
+                                color: LightColor.green,
+                                lightColor: LightColor.lightGreen),
+                                onLongPress: ()
+                                {
+                                  print("ewed");
+                                  _launchURL();
+                                },
+                            onTap: () {
+                              setState(() {
+                                print("fdff");
+                                _launchURL();
+                              });
+                            },
+                          ),
                           _categoryCard("Covid - 19 Specialist", "899 Doctors",
                               "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
                               color: LightColor.skyBlue,
@@ -333,5 +349,15 @@ class _HomePageState extends State<HomePage> {
         // Navigator.pushNamed(context, "/DetailPage", arguments: model);
       }, borderRadius: const BorderRadius.all(Radius.circular(20))),
     );
+  }
+
+  _launchURL() async {
+    print("ererge");
+    const url = 'https://www.netmeds.com/';
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: true, enableJavaScript: true);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
