@@ -19,120 +19,115 @@ class _MaternityState extends State<Maternity> {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         resizeToAvoidBottomInset: false,
-        body: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).requestFocus(new FocusNode());
-          },
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                children: <Widget>[
-                  //Now our code is much improved
-                  SizedBox(
-                    height: 20,
+        body: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              children: <Widget>[
+                //Now our code is much improved
+                SizedBox(
+                  height: 20,
+                ),
+                Image(
+                  fit: BoxFit.cover,
+                  height: 325,
+                  image: NetworkImage(
+                      'https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/06/28/Pictures/newborns-effort-facilities-needed-pregnant-provide-basic_78e8dd6e-7ab6-11e8-8d5f-3f0c905295d2.jpg'),
+                ),
+                // CachedNetworkImage(
+                //   fit: BoxFit.cover,
+                //   imageUrl: "https://wallpaperboat.com/wp-content/uploads/2020/11/23/61328/steam-train-02.jpg"
+                // ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.only(top: 300),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey[200],
                   ),
-                  Image(
-                    fit: BoxFit.cover,
-                    height: 325,
-                    image: NetworkImage(
-                        'https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/06/28/Pictures/newborns-effort-facilities-needed-pregnant-provide-basic_78e8dd6e-7ab6-11e8-8d5f-3f0c905295d2.jpg'),
-                  ),
-                  // CachedNetworkImage(
-                  //   fit: BoxFit.cover,
-                  //   imageUrl: "https://wallpaperboat.com/wp-content/uploads/2020/11/23/61328/steam-train-02.jpg"
-                  // ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.only(top: 300),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey[200],
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Column(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 8, right: 16, left: 16, bottom: 4),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Text("Category", style: TextStyles.title.bold),
-                                Text(
-                                  "See All",
-                                  style: TextStyles.titleNormal.copyWith(
-                                      color: Theme.of(context).primaryColor),
-                                ).p(8).ripple(() {})
-                              ],
-                            ),
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 8, right: 16, left: 16, bottom: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text("Category", style: TextStyles.title.bold),
+                              Text(
+                                "See All",
+                                style: TextStyles.titleNormal.copyWith(
+                                    color: Theme.of(context).primaryColor),
+                              ).p(8).ripple(() {})
+                            ],
                           ),
-                          SizedBox(
-                            height: AppTheme.fullHeight(context) * .28,
-                            width: AppTheme.fullWidth(context),
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: <Widget>[
-                                GestureDetector(
-                                  child: _categoryCard(
-                                      "Baby Kicker",
-                                      "3 days left ...",
-                                      "https://media.istockphoto.com/photos/closeup-detail-of-two-adorable-little-baby-feet-picture-id157281452?k=20&m=157281452&s=170667a&w=0&h=WvfWyS6fGKf-usbRNNlZgSnPx6HXoTfCVp49Kepqcio=",
-                                      color: Colors.green,
-                                      lightColor: Colors.greenAccent),
-                                  onDoubleTap: () => Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) => Counter())),
-                                  onLongPress: () => Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) => Counter())),
-                                ),
-                                GestureDetector(
-                                  child: _categoryCard("", "3 days left ...",
-                                      "https://thumbs.dreamstime.com/b/bmi-body-mass-index-calculator-icon-illustration-vector-bmi-body-mass-index-calculator-icon-illustration-157560815.jpg",
-                                      color: Colors.green,
-                                      lightColor: Colors.greenAccent),
-                                  onLongPress: () {
-                                    print("ewed");
+                        ),
+                        SizedBox(
+                          height: AppTheme.fullHeight(context) * .28,
+                          width: AppTheme.fullWidth(context),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              GestureDetector(
+                                child: _categoryCard(
+                                    "Baby Kicker",
+                                    "3 days left ...",
+                                    "https://media.istockphoto.com/photos/closeup-detail-of-two-adorable-little-baby-feet-picture-id157281452?k=20&m=157281452&s=170667a&w=0&h=WvfWyS6fGKf-usbRNNlZgSnPx6HXoTfCVp49Kepqcio=",
+                                    color: Colors.green,
+                                    lightColor: Colors.greenAccent),
+                                onDoubleTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => Counter())),
+                                onLongPress: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => Counter())),
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("", "3 days left ...",
+                                    "https://thumbs.dreamstime.com/b/bmi-body-mass-index-calculator-icon-illustration-vector-bmi-body-mass-index-calculator-icon-illustration-157560815.jpg",
+                                    color: Colors.green,
+                                    lightColor: Colors.greenAccent),
+                                onLongPress: () {
+                                  print("ewed");
+                                  _launchURL();
+                                },
+                                onDoubleTap: () {
+                                  setState(() {
+                                    print("fdff");
                                     _launchURL();
-                                  },
-                                  onDoubleTap: () {
-                                    setState(() {
-                                      print("fdff");
-                                      _launchURL();
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: _categoryCard("", "50 + Doctors",
-                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1vYq5hVWmM-oOUPrrZFo9QbaEKyhn01ZZfXxhin_77HDR6URtD6lbb4iRxJWshgTLYY&usqp=CAU",
-                                      color: Colors.orange,
-                                      lightColor: Colors.orange),
-                                  onDoubleTap: () => Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) => DocAPPo())),
-                                  onLongPress: () => Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) => DocAPPo())),
-                                ),
-                                GestureDetector(
-                                  child: _categoryCard("", "899 Doctors",
-                                      "https://cdn-icons-png.flaticon.com/512/3158/3158990.png",
-                                      color: Colors.blue,
-                                      lightColor: Colors.lightBlueAccent),
-                                ),
-                              ],
-                            ),
+                                  });
+                                },
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("", "50 + Doctors",
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1vYq5hVWmM-oOUPrrZFo9QbaEKyhn01ZZfXxhin_77HDR6URtD6lbb4iRxJWshgTLYY&usqp=CAU",
+                                    color: Colors.orange,
+                                    lightColor: Colors.orange),
+                                onDoubleTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => DocAPPo())),
+                                onLongPress: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => DocAPPo())),
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("", "899 Doctors",
+                                    "https://cdn-icons-png.flaticon.com/512/3158/3158990.png",
+                                    color: Colors.blue,
+                                    lightColor: Colors.lightBlueAccent),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
-            ],
-          ),
+                  ),
+                )
+              ],
+            ),
+          ],
         ));
   }
 

@@ -1,23 +1,23 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:med_devs/Doctor/appodoc.dart';
 import 'package:med_devs/Hospital/hosdata.dart';
 import 'package:med_devs/Hospital/hospital.dart';
-import 'package:med_devs/Maternity/mat.dart';
+import 'package:med_devs/Maternity/maternity.dart';
+import 'package:med_devs/Maternity/tools/counter.dart';
 import 'package:med_devs/Prescription/pres.dart';
 import 'package:med_devs/Style/extension.dart';
 import 'package:med_devs/Style/textst.dart';
 import 'package:med_devs/Style/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Mat extends StatefulWidget {
+  const Mat({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<Mat> {
   late List<HosModel> doctorDataList;
   @override
   void initState() {
@@ -25,107 +25,99 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  Color randomColor() {
-    var random = Random();
-    final colorList = [
-      Theme.of(context).primaryColor,
-      Colors.orange,
-      Colors.green,
-      Colors.grey,
-      const Color(0xfffa9881),
-      Color(0xff71b4fb),
-      Color(0xff1b1718),
-      Colors.red,
-      Colors.brown,
-      Color(0xffb1a5f6),
-      Color(0xff71b4fb),
-    ];
-    var color = colorList[random.nextInt(colorList.length)];
-    return color;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.grey[100],
-        leading: const Icon(
-          Icons.short_text,
-          size: 30,
-          color: Colors.black,
-        ),
-        actions: <Widget>[
-          const Icon(
-            Icons.notifications_none,
-            size: 30,
-            color: Colors.black,
-          ),
-          ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(13)),
-            child: Container(
-              // height: 40,
-              // width: 40,
-              decoration: BoxDecoration(
-                color: Theme.of(context).backgroundColor,
-              ),
-              // child: Image.asset("assets/user.png", fit: BoxFit.fill),
-            ),
-          ).p(8),
-        ],
-      ),
       backgroundColor: Colors.grey[100],
       body: CustomScrollView(
         slivers: <Widget>[
           SliverList(
             delegate: SliverChildListDelegate(
               [
+                SizedBox(
+                  height: 20,
+                ),
+                Image(
+                  fit: BoxFit.cover,
+                  height: 325,
+                  image: NetworkImage(
+                      'https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/06/28/Pictures/newborns-effort-facilities-needed-pregnant-provide-basic_78e8dd6e-7ab6-11e8-8d5f-3f0c905295d2.jpg'),
+                ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("Hello,",
-                        style:
-                            TextStyle(color: Colors.grey[700], fontSize: 18)),
-                    const Text("Rajinikanth",
-                        // style: TextStyles.h1Style
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 38)),
-                  ],
-                ).p16,
-                Container(
-                  height: 55,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(13)),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(.3),
-                        blurRadius: 15,
-                        offset: const Offset(5, 5),
-                      )
-                    ],
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 16),
-                      border: InputBorder.none,
-                      hintText: "Search",
-                      hintStyle: TextStyles.body.subTitleColor,
-                      suffixIcon: SizedBox(
-                          width: 50,
-                          child:
-                              const Icon(Icons.search, color: Colors.purple)
-                                  .alignCenter
-                                  .ripple(() {},
-                                      borderRadius: BorderRadius.circular(13))),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 8, right: 16, left: 16, bottom: 4),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("Tools", style: TextStyles.title.bold),
+                          Text(
+                            "See All",
+                            style: TextStyles.titleNormal.copyWith(
+                                color: Theme.of(context).primaryColor),
+                          ).p(8).ripple(() {})
+                        ],
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: AppTheme.fullHeight(context) * .28,
+                      width: AppTheme.fullWidth(context),
+                      child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              GestureDetector(
+                                child: _categoryCard(
+                                    "Baby Kicker",
+                                    "",
+                                    "https://media.istockphoto.com/photos/closeup-detail-of-two-adorable-little-baby-feet-picture-id157281452?k=20&m=157281452&s=170667a&w=0&h=WvfWyS6fGKf-usbRNNlZgSnPx6HXoTfCVp49Kepqcio=",
+                                    color: Colors.green,
+                                    lightColor: Colors.greenAccent),
+                                onDoubleTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => Counter())),
+                                onLongPress: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => Counter())),
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("", "",
+                                    "https://thumbs.dreamstime.com/b/bmi-body-mass-index-calculator-icon-illustration-vector-bmi-body-mass-index-calculator-icon-illustration-157560815.jpg",
+                                    color: Colors.green,
+                                    lightColor: Colors.greenAccent),
+                                onLongPress: () {
+                                  print("ewed");
+                                  _launchURL();
+                                },
+                                onDoubleTap: () {
+                                  setState(() {
+                                    print("fdff");
+                                    _launchURL();
+                                  });
+                                },
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("", "",
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1vYq5hVWmM-oOUPrrZFo9QbaEKyhn01ZZfXxhin_77HDR6URtD6lbb4iRxJWshgTLYY&usqp=CAU",
+                                    color: Colors.orange,
+                                    lightColor: Colors.orange),
+                                onDoubleTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => DocAPPo())),
+                                onLongPress: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => DocAPPo())),
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("", "",
+                                    "https://cdn-icons-png.flaticon.com/512/3158/3158990.png",
+                                    color: Colors.blue,
+                                    lightColor: Colors.lightBlueAccent),
+                              ),
+                            ],
+                          ),
+                    ),
+                  ],
                 ),
                 Column(
                   children: <Widget>[
@@ -152,8 +144,8 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           GestureDetector(
                             child: _categoryCard(
-                                "Medicine Shop",
-                                "3 days left ...",
+                                "Baby Kicker",
+                                "",
                                 "https://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg",
                                 color: Colors.green,
                                 lightColor: Colors.lightGreen),
@@ -170,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                             },
                           ),
                           GestureDetector(
-                            child: _categoryCard("Top Doctors", "899 Doctors",
+                            child: _categoryCard("", "",
                                 "https://media.istockphoto.com/photos/doctor-work-space-concept-picture-id825461262?k=20&m=825461262&s=612x612&w=0&h=SZ7fXYYTUKi3QbcOGfVWd9pwaBcvQt7lcRfkrpX40IU=",
                                 color: Color(0xff71b4fb),
                                 lightColor: Colors.lightBlue),
@@ -182,17 +174,17 @@ class _HomePageState extends State<HomePage> {
                           GestureDetector(
                             child: _categoryCard(
                                 " ",
-                                "Maternity Specialist",
+                                "",
                                 "https://cdn.dribbble.com/users/1630878/screenshots/6195908/comfort_maternity_2_4x.jpg",
                                 color: Colors.orange,
                                 lightColor: Color(0xfffa9881)),
                                 onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Mat())),
+                                    builder: (context) => Maternity())),
                                     onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Mat())),
+                                    builder: (context) => Maternity())),
                           ),
                           GestureDetector(
-                            child: _categoryCard("Prescription", "",
+                            child: _categoryCard("", "",
                                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*",
                                 color: Colors.green,
                                 lightColor: Color(0xff5ed6c3)),
@@ -206,32 +198,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-              ],
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text("Health Centers Near you", style: TextStyles.title.bold),
-                    IconButton(
-                            icon: Icon(
-                              Icons.sort,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            onPressed: () {})
-                        .p(12)
-                        .ripple(() {},
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(20))),
-                  ],
-                ).hP16,
-                Column(
-                    children: doctorDataList.map((x) {
-                  return _doctorTile(x);
-                }).toList()),
               ],
             ),
           ),
@@ -307,70 +273,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _doctorTile(HosModel model) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            offset: const Offset(4, 4),
-            blurRadius: 10,
-            color: Colors.grey.withOpacity(.2),
-          ),
-          BoxShadow(
-            offset: const Offset(-3, 0),
-            blurRadius: 15,
-            color: Colors.grey.withOpacity(.1),
-          )
-        ],
-      ),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-        child: ListTile(
-          contentPadding: const EdgeInsets.all(0),
-          leading: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(13)),
-            child: Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: randomColor(),
-              ),
-              child: Image.network(
-                model.image,
-                height: 50,
-                width: 50,
-                fit: BoxFit.fitHeight,
-              ),
-              // child: const Image(
-              //   image: NetworkImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhandsome-doctor&psig=AOvVaw1hdk-_Q7L9gWnUUhmxm3tX&ust=1643535480955000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNjPt_bU1vUCFQAAAAAdAAAAABAD"),
-              // ),
-            ),
-          ),
-          title: Text(model.name, style: TextStyles.title.bold),
-          subtitle: Text(
-            model.type,
-            style: TextStyles.bodySm.subTitleColor.bold,
-          ),
-          trailing: Icon(
-            Icons.keyboard_arrow_right,
-            size: 30,
-            color: Theme.of(context).primaryColor,
-          ),
-        ),
-      ).ripple(() {
-        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailPage(model: model,)));
-        // // Navigator.pushNamed(context, "/DetailPage", arguments: model);
-      }, borderRadius: const BorderRadius.all(Radius.circular(20))),
-    );
-  }
-
   _launchURL() async {
     print("ererge");
-    const url = 'https://www.netmeds.com/';
+    const url =
+        'https://www.calculator.net/pregnancy-weight-gain-calculator.html';
     if (await canLaunch(url)) {
       await launch(url, forceWebView: true, enableJavaScript: true);
     } else {
