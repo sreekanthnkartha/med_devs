@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:med_devs/Style/extension.dart';
-import 'package:med_devs/Style/lcolor.dart';
 import 'package:med_devs/Style/textst.dart';
 import 'doctorpage.dart';
 import 'data.dart';
