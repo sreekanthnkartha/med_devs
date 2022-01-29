@@ -33,7 +33,7 @@ class _DetailPageState extends State<DetailPage> {
         bottom: false,
         child: Stack(
           children: <Widget>[
-            // Image.asset(model.image),
+            Image.network(model.image),
             DraggableScrollableSheet(
               maxChildSize: .8,
               initialChildSize: .6,
@@ -97,8 +97,8 @@ class _DetailPageState extends State<DetailPage> {
                                   child: CircularPercentIndicator(
                                     radius: 40.0,
                                     lineWidth: 5.0,
-                                    percent: 0.9,
-                                    center: new Text("90%"),
+                                    percent: model.goodReviews/100,
+                                    center: Text("${model.goodReviews}"),
                                     progressColor: Colors.blueGrey,
                                   ),
                                 ),
@@ -112,8 +112,8 @@ class _DetailPageState extends State<DetailPage> {
                                   child: CircularPercentIndicator(
                                     radius: 40.0,
                                     lineWidth: 5.0,
-                                    percent: 0.7,
-                                    center: new Text("70%"),
+                                    percent: model.totalScore/100,
+                                    center: new Text("${model.totalScore}"),
                                     progressColor: Colors.blueGrey,
                                   ),
                                 ),
@@ -127,8 +127,8 @@ class _DetailPageState extends State<DetailPage> {
                                   child: CircularPercentIndicator(
                                     radius: 40.0,
                                     lineWidth: 5.0,
-                                    percent: 1.0,
-                                    center: new Text("100%"),
+                                    percent: model.satisfaction/100,
+                                    center: new Text("${model.satisfaction}"),
                                     progressColor: Colors.blueGrey,
                                   ),
                                 ),

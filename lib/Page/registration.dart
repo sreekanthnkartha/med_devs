@@ -52,7 +52,7 @@ class _RegPageState extends State<RegPage> {
                 //Now our code is much improved
                 CachedNetworkImage(
                     imageUrl:
-                        "https://www.wallpapertip.com/wmimgs/174-1749637_dubai-metro.jpg"),
+                        "https://economictimes.indiatimes.com/thumb/msid-75771189,width-1200,height-900,resizemode-4,imgsize-693576/223-health-insurance.jpg"),
                 Container(
                   // width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.only(top: 200),

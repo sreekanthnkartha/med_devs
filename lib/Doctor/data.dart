@@ -1,6 +1,6 @@
 final doctorMapList = [
   {
-    "name": "Dr. David Kemp",
+    "name": "Dr. Raamu",
     "type": "Heart Sergeon",
     "rating": 4.5,
     "goodReviews": 79.2,
@@ -11,7 +11,7 @@ final doctorMapList = [
     "description": "A doctor can be found in several settings, including public health organization, group practices and  hospitals They have some of the most diverse and challenging careears available and part of a universally well-respected profession",
   },
   {
-    "name": "Dr. katthy Mathews",
+    "name": "Dr. Ravi Thampan",
     "type": "Neurology",
     "rating": 3.5,
     "goodReviews": 93.2,
@@ -22,7 +22,7 @@ final doctorMapList = [
     "description": "A doctor can be found in several settings, including public health organization, group practices and  hospitals They have some of the most diverse and challenging careears available and part of a universally well-respected profession",
   },
   {
-    "name": "DR. Morris",
+    "name": "Dr. Joel John",
     "type": "Cardio Sergeon",
     "rating": 2.5,
     "goodReviews": 88.2,
@@ -33,7 +33,7 @@ final doctorMapList = [
     "description": "A doctor can be found in several settings, including public health organization, group practices and  hospitals They have some of the most diverse and challenging careears available and part of a universally well-respected profession",
   },
   {
-    "name": "Dr. Bruce Banner",
+    "name": "Dr. Eldho",
     "type": "Heart Sergeon",
     "rating": 1.5,
     "goodReviews": 12.2,
