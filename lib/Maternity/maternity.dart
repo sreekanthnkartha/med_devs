@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:med_devs/Doctor/appodoc.dart';
-import 'package:med_devs/Maternity/Bmi/screens/input_page.dart';
+// import 'package:med_devs/Maternity/Bmi/screens/input_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:med_devs/Maternity/tools/counter.dart';
 import 'package:med_devs/Style/extension.dart';
 // import 'package:med_devs/Style/lcolor.dart';
@@ -89,15 +90,22 @@ class _MaternityState extends State<Maternity> {
                           ),
                           GestureDetector(
                             child: _categoryCard(
-                                "Bmi",
+                                "",
                                 "3 days left ...",
-                                "https://media.istockphoto.com/photos/closeup-detail-of-two-adorable-little-baby-feet-picture-id157281452?k=20&m=157281452&s=170667a&w=0&h=WvfWyS6fGKf-usbRNNlZgSnPx6HXoTfCVp49Kepqcio=",
+                                "https://thumbs.dreamstime.com/b/bmi-body-mass-index-calculator-icon-illustration-vector-bmi-body-mass-index-calculator-icon-illustration-157560815.jpg",
                                 color: Colors.green,
                                 lightColor: Colors.greenAccent),
-                                onDoubleTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => InputPage())),
-                                    onLongPress: () =>  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => InputPage())),
+                               onLongPress: ()
+                                {
+                                  print("ewed");
+                                  _launchURL();
+                                },
+                            onDoubleTap: () {
+                              setState(() {
+                                print("fdff");
+                                _launchURL();
+                              });
+                            },
                           ),
                           GestureDetector(
                             child: _categoryCard(
@@ -197,5 +205,13 @@ class _MaternityState extends State<Maternity> {
       ),
     );
   }
-  
+  _launchURL() async {
+    print("ererge");
+    const url = 'https://www.calculator.net/bmi-calculator.html?ctype=metric&cage=25&csex=m&cheightfeet=5&cheightinch=10&cpound=160&cheightmeter=180&ckg=65&printit=0';
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: true, enableJavaScript: true);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 }
