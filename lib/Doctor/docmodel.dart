@@ -4,22 +4,18 @@ class DoctorModel {
     String name;
     String type;
     String description;
-    double rating;
     double goodReviews;
     double totalScore;
     double satisfaction;
-    bool isfavourite;
     String image;
 
     DoctorModel({
         required this.name,
         required this.type,
         required this.description,
-        required this.rating,
         required this.goodReviews,
         required this.totalScore,
         required this.satisfaction,
-        required this.isfavourite,
         required this.image,
     });
 
@@ -27,22 +23,18 @@ class DoctorModel {
         required String name,
         required String type,
         required String description,
-        required double rating,
         required double goodReviews,
         required double totalScore,
         required double satisfaction,
-        required bool isfavourite,
         required String image,
     }) => 
         DoctorModel(
             name: name,
             type: type,
             description: description,
-            rating: rating,
             goodReviews: goodReviews,
             totalScore: totalScore,
             satisfaction: satisfaction,
-            isfavourite: isfavourite,
             image: image,
         );
 
@@ -54,11 +46,9 @@ class DoctorModel {
         name: json["name"],
         type: json["type"],
         description: json["description"],
-        rating: json["rating"] == null ? null : json["rating"].toDouble(),
         goodReviews: json["goodReviews"] == null ? null : json["goodReviews"].toDouble(),
         totalScore: json["totalScore"] == null ? null : json["totalScore"].toDouble(),
         satisfaction: json["satisfaction"] == null ? null : json["satisfaction"].toDouble(),
-        isfavourite: json["isfavourite"],
         image: json["image"],
     );
 
@@ -66,11 +56,9 @@ class DoctorModel {
         "name": name,
         "type": type,
         "description": description,
-        "rating": rating,
         "goodReviews": goodReviews,
         "totalScore": totalScore,
         "satisfaction": satisfaction,
-        "isfavourite": isfavourite,
         "image": image,
     };
 }

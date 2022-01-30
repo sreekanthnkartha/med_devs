@@ -72,10 +72,6 @@ class _DetailPageState extends State<DetailPage> {
                               Icon(Icons.check_circle,
                                   size: 18,
                                   color: Theme.of(context).primaryColor),
-                              // Spacer(),
-                              // RatingStar(
-                              //   rating: model.rating,
-                              // )
                             ],
                           ),
                           subtitle: Text(
@@ -135,30 +131,6 @@ class _DetailPageState extends State<DetailPage> {
                                 Text("Satisfaction"),
                               ],
                             ),
-                            // ProgressWidget(
-                            //     value: model.goodReviews,
-                            //     totalValue: 100,
-                            //     activeColor: LightColor.purpleExtraLight,
-                            //     backgroundColor:
-                            //         LightColor.grey.withOpacity(.3),
-                            //     title: "Good Review",
-                            //     durationTime: 500),
-                            // ProgressWidget(
-                            //     value: model.totalScore,
-                            //     totalValue: 100,
-                            //     activeColor: LightColor.purpleLight,
-                            //     backgroundColor:
-                            //         LightColor.grey.withOpacity(.3),
-                            //     title: "Total Score",
-                            //     durationTime: 300),
-                            // ProgressWidget(
-                            //     value: model.satisfaction,
-                            //     totalValue: 100,
-                            //     activeColor: LightColor.purple,
-                            //     backgroundColor:
-                            //         LightColor.grey.withOpacity(.3),
-                            //     title: "Satisfaction",
-                            //     durationTime: 800),
                           ],
                         ),
                         Divider(
@@ -225,14 +197,6 @@ class _DetailPageState extends State<DetailPage> {
                                           size: 80,
                                           color: Colors.green,
                                         ),
-                                        // actions: <Widget>[
-                                        //   FlatButton(
-                                        //     onPressed: () {
-                                        //       Navigator.of(ctx).pop();
-                                        //     },
-                                        //     child: Text("okay"),
-                                        //   ),
-                                        // ],
                                       ),
                                     );
                               },

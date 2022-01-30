@@ -46,19 +46,12 @@ class _NewsState extends State<News> {
             child: Container(
               height: 55,
               width: 55,
-              // decoration: BoxDecoration(
-              //   borderRadius: BorderRadius.circular(15),
-              //   color: randomColor(),
-              // ),
               child: Image.network(
                 model.image,
                 height: 50,
                 width: 50,
                 fit: BoxFit.contain,
               ),
-              // child: const Image(
-              //   image: NetworkImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhandsome-doctor&psig=AOvVaw1hdk-_Q7L9gWnUUhmxm3tX&ust=1643535480955000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNjPt_bU1vUCFQAAAAAdAAAAABAD"),
-              // ),
             ),
           ),
           title: Text(model.name, style: TextStyles.title.bold),
@@ -73,8 +66,6 @@ class _NewsState extends State<News> {
           ),
         ),
       ).ripple(() {
-        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailPage(model: model,)));
-        // Navigator.pushNamed(context, "/DetailPage", arguments: model);
       }, borderRadius: const BorderRadius.all(Radius.circular(20))),
     );
   }
@@ -103,7 +94,6 @@ class _NewsState extends State<News> {
               decoration: BoxDecoration(
                 color: Theme.of(context).backgroundColor,
               ),
-              // child: Image.asset("assets/user.png", fit: BoxFit.fill),
             ),
           ).p(8),
         ],
