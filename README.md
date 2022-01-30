@@ -1,7 +1,3 @@
-# MED-DEVS
-
-A new Flutter project.
-
 ## UpHealth➕
 
 An Application that monitor the health condition of people.
