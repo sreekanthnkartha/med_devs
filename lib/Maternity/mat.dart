@@ -4,6 +4,7 @@ import 'package:med_devs/Hospital/hosdata.dart';
 import 'package:med_devs/Hospital/hospital.dart';
 import 'package:med_devs/Maternity/Others/news.dart';
 import 'package:med_devs/Maternity/tools/counter.dart';
+import 'package:med_devs/Maternity/tools/weight.dart';
 import 'package:med_devs/Style/extension.dart';
 import 'package:med_devs/Style/textst.dart';
 import 'package:med_devs/Style/theme.dart';
@@ -84,16 +85,24 @@ class _HomePageState extends State<Mat> {
                                     "https://health.clevelandclinic.org/wp-content/uploads/sites/3/2019/09/gainLoseWeight-1137100432-770x553.jpg",
                                     color: Colors.green,
                                     lightColor: Colors.greenAccent),
-                                onLongPress: () {
-                                  print("ewed");
-                                  _launchURL();
-                                },
-                                onDoubleTap: () {
-                                  setState(() {
-                                    print("fdff");
-                                    _launchURL();
-                                  });
-                                },
+                                onDoubleTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => Weight())),
+                                onLongPress: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => Weight())),
+                              ),
+                              GestureDetector(
+                                child: _categoryCard("Food Scanner", "",
+                                    "https://i1.wp.com/thespoon.tech/wp-content/uploads/2021/02/UA_MealScan_Almond_1504x944-752x472-1.jpg?fit=752%2C472&ssl=1",
+                                    color: Colors.orange,
+                                    lightColor: Colors.orange),
+                                // onDoubleTap: () => Navigator.of(context).push(
+                                //     MaterialPageRoute(
+                                //         builder: (context) => DocAPPo())),
+                                // onLongPress: () => Navigator.of(context).push(
+                                //     MaterialPageRoute(
+                                //         builder: (context) => DocAPPo())),
                               ),
                               GestureDetector(
                                 child: _categoryCard("", "",
