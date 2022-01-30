@@ -1,8 +1,14 @@
-# med_devs
+# MED-DEVS
 
 A new Flutter project.
 
-## Getting Started
+## UpHealth➕
+
+An Application that monitor the health condition of people.
+Keep a track of medicine they are having, if the period of medicines are over book an appointment for consultation, if the medicine are over order the medicines with at the lowest cost possible. 
+
+
+## MORE ON FLUTTER ⬇️
 
 This project is a starting point for a Flutter application.
 
